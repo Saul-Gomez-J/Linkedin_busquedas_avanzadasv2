@@ -5,6 +5,65 @@ import urllib.parse
 # Inicializar el cliente de OpenAI utilizando las variables de entorno de Streamlit
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
+st.markdown(
+    """
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Saira:wght@100;300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+    /* Título del sitio */
+    .css-18e3th9 {
+        font-family: 'Saira', sans-serif;
+        font-weight: 500; /* Medium */
+        font-size: 30px;
+    }
+
+    /* Fuente del cuerpo */
+    .css-1d391kg {
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 400; /* Regular */
+        font-size: 16px;
+    }
+
+    /* Fuente H1 */
+    h1 {
+        font-family: 'Saira', sans-serif;
+        font-weight: 400; /* Regular */
+        font-size: 36px;
+    }
+
+    /* Fuente H2 */
+    h2 {
+        font-family: 'Saira', sans-serif;
+        font-weight: 400; /* Regular */
+        font-size: 26px;
+    }
+
+    /* Fuente H3 */
+    h3 {
+        font-family: 'Saira', sans-serif;
+        font-weight: 400; /* Regular */
+        font-size: 22px;
+    }
+
+    /* Fuente H4 */
+    h4 {
+        font-family: 'Saira', sans-serif;
+        font-weight: 400; /* Regular */
+        font-size: 18px;
+    }
+
+    /* Fuente H5 */
+    h5 {
+        font-family: 'Saira', sans-serif;
+        font-weight: 400; /* Regular */
+        font-size: 16px;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 def generate_linkedin_search_query(prompt):
     response = client.chat.completions.create(
         model="gpt-4",
