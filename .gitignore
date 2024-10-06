@@ -1,5 +1,4 @@
 .env
-app.py
 inicio_sesion_linkedin.py
 /src
 /__pycache__
