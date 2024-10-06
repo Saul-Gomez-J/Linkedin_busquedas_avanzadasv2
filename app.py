@@ -1,13 +1,9 @@
 import streamlit as st
 from openai import OpenAI
-import os
-from dotenv import load_dotenv
+import urllib.parse
 
-# Cargar variables de entorno
-load_dotenv()
-
-# Inicializar el cliente de OpenAI
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# Inicializar el cliente de OpenAI utilizando las variables de entorno de Streamlit
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 def generate_linkedin_search_query(prompt):
     response = client.chat.completions.create(
@@ -43,8 +39,8 @@ def generate_linkedin_search_query(prompt):
 
 def build_google_search_url(search_query):
     base_url = "https://www.google.com/search?q="
-    # Reemplazar espacios por '+', comillas por '%22' y paréntesis por sus códigos URL
-    encoded_query = search_query.replace(' ', '+').replace('"', '%22').replace('(', '%28').replace(')', '%29')
+    # Utilizar urllib.parse para codificar correctamente la consulta
+    encoded_query = urllib.parse.quote(search_query)
     return f"{base_url}{encoded_query}"
 
 def main():
