@@ -2,6 +2,9 @@ import streamlit as st
 from openai import OpenAI
 import urllib.parse
 
+# Configurar la página de Streamlit debe ser lo primero en el script.
+st.set_page_config(page_title="Generador de Búsqueda Avanzada de LinkedIn", page_icon="🔍")
+
 # Inicializar el cliente de OpenAI utilizando las variables de entorno de Streamlit
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
@@ -72,7 +75,6 @@ def build_google_search_url(search_query):
     return f"{base_url}{encoded_query}"
 
 def main():
-    st.set_page_config(page_title="Generador de Búsqueda Avanzada de LinkedIn", page_icon="🔍")
     st.title("🔍 Generador de Búsqueda Avanzada de LinkedIn")
 
     st.write("""
