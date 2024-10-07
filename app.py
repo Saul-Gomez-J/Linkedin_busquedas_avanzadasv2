@@ -33,7 +33,7 @@ st.markdown(
         padding: 12px 24px;
         font-size: 18px;
         color: white;
-        background-color: #4CAF50;
+        background-color: rgb(0, 127, 184);
         border: none;
         border-radius: 8px;
         text-align: center;
@@ -42,10 +42,11 @@ st.markdown(
         font-weight: 500;
         cursor: pointer;
         margin: 20px 0;
+        transition: background-color 0.3s ease;
     }
 
     .custom-button:hover {
-        background-color: #45a049;
+        background-color: rgb(0, 107, 164);
     }
 
     </style>
