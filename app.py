@@ -24,55 +24,21 @@ st.markdown(
         font-size: 16px;
     }
 
-    /* Fuente H1 */
-    h1 {
-        font-family: 'Saira', sans-serif;
-        font-weight: 400; /* Regular */
-        font-size: 36px;
-    }
-
-    /* Fuente H2 */
-    h2 {
-        font-family: 'Saira', sans-serif;
-        font-weight: 400; /* Regular */
-        font-size: 26px;
-    }
-
-    /* Fuente H3 */
-    h3 {
-        font-family: 'Saira', sans-serif;
-        font-weight: 400; /* Regular */
-        font-size: 22px;
-    }
-
-    /* Fuente H4 */
-    h4 {
-        font-family: 'Saira', sans-serif;
-        font-weight: 400; /* Regular */
-        font-size: 18px;
-    }
-
-    /* Fuente H5 */
-    h5 {
-        font-family: 'Saira', sans-serif;
-        font-weight: 400; /* Regular */
-        font-size: 16px;
-    }
-
     /* Estilo para el botón personalizado */
     .custom-button {
         display: inline-block;
-        padding: 10px 20px;
+        padding: 12px 24px;
         font-size: 18px;
         color: white;
         background-color: #4CAF50;
         border: none;
-        border-radius: 5px;
+        border-radius: 8px;
         text-align: center;
         text-decoration: none;
         font-family: 'Saira', sans-serif;
         font-weight: 500;
         cursor: pointer;
+        margin: 20px 0;
     }
 
     .custom-button:hover {
@@ -134,8 +100,8 @@ def main():
                 try:
                     search_url = build_google_search_url(search_query)
                     st.success("Enlace de búsqueda construido exitosamente.")
-                    # Mostrar el botón con el enlace
-                    st.markdown(f'<a href="{search_url}" class="custom-button" target="_blank">🔗 Click aquí para ver el resultado de tu búsqueda</a>', unsafe_allow_html=True)
+                    # Mostrar el botón con el enlace, sin mostrar la consulta generada
+                    st.markdown(f'<a href="{search_url}" class="custom-button" target="_blank">🔍 Click aquí para ver el resultado de tu búsqueda</a>', unsafe_allow_html=True)
                 except Exception as e:
                     st.error(f"Error al construir el enlace: {e}")
         else:
