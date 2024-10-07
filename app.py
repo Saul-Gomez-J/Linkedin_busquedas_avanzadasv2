@@ -32,7 +32,7 @@ st.markdown(
         display: inline-block;
         padding: 12px 24px;
         font-size: 18px;
-        color: white;
+        color: white;  /* Texto en color blanco */
         background-color: rgb(0, 127, 184);
         border: none;
         border-radius: 8px;
@@ -47,6 +47,7 @@ st.markdown(
 
     .custom-button:hover {
         background-color: rgb(0, 107, 164);
+        color: white;  /* Mantener el texto en blanco al hacer hover */
     }
 
     </style>
