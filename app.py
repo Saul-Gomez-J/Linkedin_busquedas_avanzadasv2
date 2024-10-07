@@ -32,7 +32,7 @@ st.markdown(
         display: inline-block;
         padding: 12px 24px;
         font-size: 18px;
-        color: white;  /* Texto en color blanco */
+        color: white;
         background-color: rgb(0, 127, 184);
         border: none;
         border-radius: 8px;
@@ -47,7 +47,7 @@ st.markdown(
 
     .custom-button:hover {
         background-color: rgb(0, 107, 164);
-        color: white;  /* Mantener el texto en blanco al hacer hover */
+        color: white;
     }
 
     </style>
@@ -96,18 +96,17 @@ def main():
                 try:
                     search_query = generate_linkedin_search_query(user_query)
                     st.success("Consulta de búsqueda generada exitosamente.")
-                except Exception as e:
-                    st.error(f"Error al generar la consulta: {e}")
-                    return
-
-            with st.spinner('Construyendo el enlace de búsqueda...'):
-                try:
+                    
+                    # Construir el enlace de búsqueda
                     search_url = build_google_search_url(search_query)
-                    st.success("Enlace de búsqueda construido exitosamente.")
-                    # Mostrar el botón con el enlace, sin mostrar la consulta generada
+                    
+                    # Mostrar la consulta generada (opcional, para depuración)
+                    st.text(f"Consulta generada: {search_query}")
+                    
+                    # Mostrar el botón con el enlace
                     st.markdown(f'<a href="{search_url}" class="custom-button" target="_blank">🔍 Click aquí para ver el resultado de tu búsqueda</a>', unsafe_allow_html=True)
                 except Exception as e:
-                    st.error(f"Error al construir el enlace: {e}")
+                    st.error(f"Error al generar la consulta: {e}")
         else:
             st.error("Por favor, introduce una consulta de búsqueda válida.")
 
